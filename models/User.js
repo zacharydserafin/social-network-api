@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const Thought = require('./Thought');
 
 const userSchema = new Schema(
     {
@@ -23,13 +22,13 @@ const userSchema = new Schema(
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Thought',
+                ref: 'thought',
             },
         ],
         friends: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'User'
+                ref: 'user'
             },
         ],
     },
@@ -46,6 +45,6 @@ userSchema
         return this.friends.length;
     });
 
-const User = model('User', userSchema);
+const User = model('user', userSchema);
 
 module.exports = User;
