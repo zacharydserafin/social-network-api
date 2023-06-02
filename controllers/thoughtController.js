@@ -48,7 +48,7 @@ module.exports = {
             .then((thought) => 
                 !thought
                     ? res.status(404).json({ message: "No thought with that ID" })
-                    : res.json(thought)
+                    : res.json({ message: 'Thought deleted' })
             )
             .catch((err) => res.status(500).json(err));
     },
@@ -58,6 +58,7 @@ module.exports = {
             { $addToSet: { reactions: req.body } },
             { runValidators: true, new: true }
         )
+        .select('-__v')
         .then((thought) =>
             !thought
                 ? res.status(404).json({ message: "No thought with this ID" })
@@ -73,10 +74,11 @@ module.exports = {
                 { $pull: { reactions: { reactionId: reactionId } } },
                 { runValidators: true, new: true }
             )
+            .select('-__v')
             .then((thought) => 
                 !thought
-                    ? res.status(404).json({ message: 'No thought with this ID' })
-                    : res.json(thought)
+                    ? res.status(404).json({ message: 'No thought/reaction with this ID' })
+                    : res.json({ message: 'Reaction deleted' })
             )
             .catch((err) => res.status(500).json(err));
     },
