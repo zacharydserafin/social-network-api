@@ -8,15 +8,15 @@ const thoughtSchema = new Schema(
             required: true,
             maxLength: 280
         },
-        createdAt: {
-            type: Date,
-            default: Date.now,
-        },
         username: {
             type: String,
             required: true,
         },
         reactions: [reactionSchema],
+        createdAt: {
+            type: Date,
+            default: Date.now,
+        },
     },
     {
         toJSON: {
