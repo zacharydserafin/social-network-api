@@ -20,6 +20,8 @@ First, ensure you have MongoDB installed on your local machine. Then, you can 'n
 
 Since there is no seed data included with this demo, you'll need to start by using POST routes (which can be found in the 'routes' folder) to create a user. Once your user is created, you can use that user's id to create thoughts. Once a thought has been created, you can use the thought's id to create reactions. You can also use these respective ids to read, update, and delete as you see fit.
 
+<a href="https://drive.google.com/file/d/1H9PtFyhLt6bNr5vxj4bQUmArLjHMpzjS/view">Demonstration Video</a>
+
 ## <a id="questions"></a>Questions 
 
 Any questions or concerns regarding the project, you can contact me via my email: zserafin@hotmail.com
