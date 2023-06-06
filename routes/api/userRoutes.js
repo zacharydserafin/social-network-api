@@ -10,6 +10,13 @@ const {
 } = require('../../controllers/userController');
 
 // /api/users
+/*
+EXAMPLE createUser req.body:
+{  
+    "username": "zacharydserafin",
+    "email": "zachary@email.com"
+}
+*/
 router.route('/').get(getUsers).post(createUser);
 
 // /api/users/:userId
